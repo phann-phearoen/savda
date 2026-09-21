@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-latin);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+html[lang="km"] body {
+  font-family: var(--font-khmer);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-latin);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 var(--space-4);
+}
+
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3 {
+  font-family: var(--font-khmer);
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 var(--space-4);
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.button {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+html[lang="km"] .button {
+  font-weight: 500;
+}
+
+.button-primary {
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+}
+
+.button-accent {
+  background: var(--color-accent);
+  color: var(--color-brand-dark);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--color-brand);
+  border: 1px solid var(--color-border);
+}
+
+.section {
+  max-width: var(--container-content);
+  margin: 0 auto;
+  padding: var(--space-24) var(--gutter);
+}
+
+.section-wide {
+  max-width: var(--container-wide);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  color: var(--color-accent-secondary);
+  margin: 0 0 var(--space-2);
+}

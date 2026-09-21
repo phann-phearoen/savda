@@ -1,0 +1,9 @@
+{
+  "name": "savda-website",
+  "private": true,
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "dev:landing": "pnpm --filter landing dev",
+    "build:landing": "pnpm --filter landing build"
+  }
+}

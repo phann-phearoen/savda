@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="{{meta.lang}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link
+    rel="preload"
+    href="/fonts/manrope/manrope-variable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/fonts/kantumruy-pro/kantumruy-pro-variable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="./">
+      <img src="/logo-mark.svg" alt="{{nav.logoAlt}}" width="32" height="38" />
+    </a>
+    <nav class="lang-switch">
+      <a href="{{nav.switchHref}}">{{nav.switchLabel}}</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. Hero — Discovery -->
+    <section class="section hero">
+      <p class="eyebrow">{{hero.eyebrow}}</p>
+      <h1>{{hero.title}}</h1>
+      <p class="lead">{{hero.body}}</p>
+      <a class="button button-primary" href="#feed">{{hero.cta}}</a>
+    </section>
+
+    <!-- 2. The Discovery Feed -->
+    <section class="section feed" id="feed">
+      <h2>{{feed.title}}</h2>
+      <p class="section-intro">{{feed.intro}}</p>
+      <div class="feed-grid">
+        {{#each feed.items}}
+        <figure class="feed-item">
+          <div class="feed-image-placeholder" role="img" aria-label="{{this.alt}}"></div>
+          <figcaption>{{this.caption}}</figcaption>
+        </figure>
+        {{/each}}
+      </div>
+    </section>
+
+    <!-- 3. The Stories Behind the Products -->
+    <section class="section stories">
+      <h2>{{stories.title}}</h2>
+      <p class="section-subtitle">{{stories.subtitle}}</p>
+      <p>{{stories.body}}</p>
+    </section>
+
+    <!-- 4. Made in Cambodia, Worth Knowing -->
+    <section class="section made-in-cambodia">
+      <h2>{{madeInCambodia.title}}</h2>
+      <p>{{madeInCambodia.body}}</p>
+    </section>
+
+    <!-- 5. Discover → Shop -->
+    <section class="section shop-cta">
+      <h2>{{shop.title}}</h2>
+      <p>{{shop.body}}</p>
+      <a class="button button-accent" href="{{shop.ctaHref}}">
+        {{shop.cta}} <span class="cta-note">({{shop.ctaNote}})</span>
+      </a>
+    </section>
+
+    <!-- 6. For Creators -->
+    <section class="section creators">
+      <h2>{{creators.title}}</h2>
+      <p>{{creators.body}}</p>
+      <a class="button button-secondary" href="mailto:hello@savda.com">{{creators.cta}}</a>
+    </section>
+
+    <!-- 7. Follow Savda -->
+    <section class="section follow">
+      <h2>{{follow.title}}</h2>
+      <p>{{follow.body}}</p>
+      <ul class="social-links">
+        {{#each follow.social}}
+        <li><a href="{{this.href}}">{{this.label}}</a></li>
+        {{/each}}
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>{{footer.copyright}}</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

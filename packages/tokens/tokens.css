@@ -1,0 +1,47 @@
+/* Design tokens — source of truth: docs/color-palette.md, docs/layout-spacing.md, docs/typography.md */
+
+:root {
+  /* Colors */
+  --color-brand: #293a2e;
+  --color-brand-dark: #1e2b22;
+  --color-bg: #f5f2ec;
+  --color-text: #1b2420;
+  --color-text-inverse: #efebe4;
+  --color-accent: #c9a15a;
+  --color-accent-secondary: #b5654a;
+  --color-border: #a9b7a9;
+
+  /* Spacing scale (8px base, 4px half-step) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Breakpoints (referenced by media queries, kept here for documentation) */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  /* Containers */
+  --container-content: 1200px;
+  --container-wide: 1440px;
+  --gutter: var(--space-4);
+
+  /* Typography */
+  --font-latin: "Manrope", system-ui, sans-serif;
+  --font-khmer: "Kantumruy Pro", "Khmer OS", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: var(--space-8);
+  }
+}

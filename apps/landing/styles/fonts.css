@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/manrope/manrope-variable.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("/fonts/kantumruy-pro/kantumruy-pro-variable.woff2") format("woff2-variations");
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}

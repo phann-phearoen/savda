@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "lang": "en",
+    "title": "Savda — Discover what Cambodia makes",
+    "description": "Savda is a discovery platform for Cambodian-made products, creators, and the stories behind them."
+  },
+  "nav": {
+    "logoAlt": "Savda",
+    "switchLabel": "ភាសាខ្មែរ",
+    "switchHref": "/km/"
+  },
+  "hero": {
+    "eyebrow": "Savda",
+    "title": "Discover what Cambodia makes.",
+    "body": "Savda is a platform that tells the stories behind Cambodian-made products — the people, the craft, and the ideas most people haven't heard of yet.",
+    "cta": "Explore Savda"
+  },
+  "feed": {
+    "title": "The Discovery Feed",
+    "intro": "We found this Cambodian maker…",
+    "items": [
+      { "caption": "A ceramics studio reviving Khmer glazing techniques", "alt": "Placeholder photo of ceramic craft" },
+      { "caption": "A small-batch coffee roaster from Mondulkiri", "alt": "Placeholder photo of coffee roasting" },
+      { "caption": "A weaving collective preserving traditional patterns", "alt": "Placeholder photo of woven textile" },
+      { "caption": "An independent furniture designer working with rattan", "alt": "Placeholder photo of rattan furniture" },
+      { "caption": "A perfumer sourcing botanicals from the countryside", "alt": "Placeholder photo of perfume bottles" },
+      { "caption": "A leather workshop based in Phnom Penh", "alt": "Placeholder photo of leather goods" }
+    ]
+  },
+  "stories": {
+    "title": "Good products deserve to be discovered.",
+    "subtitle": "Good creators deserve to be known.",
+    "body": "Savda isn't just cataloguing products. It tells the stories of the people who make them — the craftsmanship, the process, and the ideas behind every piece."
+  },
+  "madeInCambodia": {
+    "title": "Made in Cambodia, worth knowing.",
+    "body": "There are Cambodian products you haven't heard of yet — and Cambodian-made doesn't have to mean cheap alternative. It can mean design, craftsmanship, innovation, quality, culture, and originality."
+  },
+  "shop": {
+    "title": "Found something you like?",
+    "body": "Shop products featured by Savda.",
+    "cta": "Visit Savda Shop",
+    "ctaNote": "Coming soon",
+    "ctaHref": "/shop/"
+  },
+  "creators": {
+    "title": "You make it. We tell the story.",
+    "body": "Savda helps Cambodian creators get discovered by new audiences, and gives interested people a way to purchase their products — without creators needing to become experts in content marketing.",
+    "cta": "Partner with Savda"
+  },
+  "follow": {
+    "title": "Keep discovering.",
+    "body": "Follow Savda for Cambodian products, creators, and stories worth knowing.",
+    "social": [
+      { "label": "Facebook", "href": "#" },
+      { "label": "Instagram", "href": "#" },
+      { "label": "TikTok", "href": "#" },
+      { "label": "YouTube", "href": "#" }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Savda"
+  }
+}
