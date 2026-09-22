@@ -4,10 +4,35 @@
   justify-content: space-between;
   padding: var(--space-6) var(--gutter);
   background: var(--color-brand);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
 }
 
-.site-header .logo img {
-  filter: invert(1) brightness(2); /* logo mark is dark green; invert for header contrast */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--color-text-inverse);
+  font-family: var(--font-latin);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+html[lang="en"] .brand span {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+html[lang="km"] .brand span {
+  font-family: var(--font-khmer);
+  letter-spacing: 4px;
 }
 
 .lang-switch a {
