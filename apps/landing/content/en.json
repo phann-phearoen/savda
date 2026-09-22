@@ -11,10 +11,27 @@
     "switchHref": "/km/"
   },
   "hero": {
-    "eyebrow": "Savda",
     "title": "Discover what Cambodia makes.",
-    "body": "Savda is a platform that tells the stories behind Cambodian-made products — the people, the craft, and the ideas most people haven't heard of yet.",
-    "cta": "Explore Savda"
+    "gridLabel": "A moving collection of Cambodian products and makers",
+    "items": [
+      { "image": "bean-to-bar-chocolate-72-percent.jpeg", "alt": "A bar of Cambodian bean-to-bar chocolate", "title": "Cacao with a local point of view", "context": "Food and drink", "visitLabel": "Visit", "href": "/stories/bean-to-bar-chocolate" },
+      { "image": "black-and-natural-woven-basket.jpeg", "alt": "A black and natural woven basket", "title": "Utility, woven by hand", "context": "Rattan craft", "visitLabel": "Visit", "href": "/stories/woven-basket" },
+      { "image": "blue-handwoven-scarf-on-mannequin.jpeg", "alt": "A blue handwoven scarf displayed on a mannequin", "title": "A textile made to be noticed", "context": "Handwoven textile", "visitLabel": "Visit", "href": "/stories/blue-handwoven-scarf" },
+      { "image": "cambodian-coffee-packaging.jpeg", "alt": "Packaged Cambodian coffee", "title": "Coffee with a sense of place", "context": "Food and drink", "visitLabel": "Visit", "href": "/stories/cambodian-coffee" },
+      { "image": "ceramic-tableware-store-interior.jpeg", "alt": "Ceramic tableware in a store interior", "title": "The quiet pull of good ceramics", "context": "Ceramic studio", "visitLabel": "Visit", "href": "/stories/ceramic-tableware" },
+      { "image": "coffee-bag-on-cafe-table.jpeg", "alt": "A bag of coffee on a cafe table", "title": "A daily ritual, reconsidered", "context": "Coffee culture", "visitLabel": "Visit", "href": "/stories/coffee-on-the-table" },
+      { "image": "coffee-bag-with-peppercorns.jpeg", "alt": "A coffee bag with peppercorns", "title": "Where coffee meets pepper", "context": "Cambodian ingredients", "visitLabel": "Visit", "href": "/stories/coffee-and-pepper" },
+      { "image": "curio-cambodian-palm-sugar.jpeg", "alt": "Cambodian palm sugar packaging", "title": "A pantry staple with character", "context": "Cambodian ingredients", "visitLabel": "Visit", "href": "/stories/palm-sugar" },
+      { "image": "gold-leaf-bracelet-earrings.jpeg", "alt": "Gold leaf bracelet and earrings", "title": "A small gesture of gold", "context": "Jewellery", "visitLabel": "Visit", "href": "/stories/gold-leaf-jewellery" },
+      { "image": "kirum-cambodian-pepper-coffee.jpeg", "alt": "Kirum Cambodian pepper coffee", "title": "A sharper kind of coffee", "context": "Food and drink", "visitLabel": "Visit", "href": "/stories/kirum-pepper-coffee" },
+      { "image": "round-rattan-serving-tray.jpeg", "alt": "A round rattan serving tray", "title": "The table, made warmer", "context": "Rattan craft", "visitLabel": "Visit", "href": "/stories/rattan-serving-tray" },
+      { "image": "traditional-weaving-loom.jpg", "alt": "A traditional weaving loom in use", "title": "The rhythm behind the cloth", "context": "Weaving process", "visitLabel": "Visit", "href": "/stories/traditional-weaving" },
+      { "image": "tropical-spa-body-care-products.webp", "alt": "Tropical spa body care products", "title": "Care shaped by the tropics", "context": "Body care", "visitLabel": "Visit", "href": "/stories/tropical-body-care" },
+      { "image": "woman-wearing-purple-silk-outfit.jpeg", "alt": "A woman wearing a purple silk outfit", "title": "Silk in the present tense", "context": "Cambodian fashion", "visitLabel": "Visit", "href": "/stories/purple-silk" },
+      { "image": "woven-market-baskets.jpeg", "alt": "Woven baskets at a market", "title": "A familiar form, freshly seen", "context": "Everyday objects", "visitLabel": "Visit", "href": "/stories/market-baskets" },
+      { "image": "woven-rattan-crossbody-bag.jpeg", "alt": "A woven rattan crossbody bag", "title": "Made for the way out", "context": "Rattan accessories", "visitLabel": "Visit", "href": "/stories/rattan-crossbody" },
+      { "image": "yellow-handwoven-scarf-outdoors.jpeg", "alt": "A yellow handwoven scarf outdoors", "title": "Colour that carries a story", "context": "Handwoven textile", "visitLabel": "Visit", "href": "/stories/yellow-handwoven-scarf" }
+    ]
   },
   "feed": {
     "title": "The Discovery Feed",

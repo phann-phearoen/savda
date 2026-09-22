@@ -58,26 +58,155 @@ html[lang="km"] .brand span {
 }
 
 .hero {
-  text-align: center;
-  padding-top: var(--space-32);
-  padding-bottom: var(--space-32);
+  position: relative;
+  isolation: isolate;
+  min-height: min(760px, calc(100svh - 81px));
+  overflow: hidden;
+  background: var(--color-brand-dark);
+  color: var(--color-text-inverse);
 }
 
 .hero h1 {
-  font-size: 2.25rem;
+  position: relative;
+  z-index: 2;
+  max-width: 11ch;
+  margin: 0;
+  padding: var(--space-8) var(--gutter);
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  pointer-events: none;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
-@media (min-width: 768px) {
+.hero-grid-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+
+.hero-grid-viewport:active {
+  cursor: grabbing;
+}
+
+.hero-grid-viewport:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+.hero-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  will-change: transform;
+}
+
+.hero-grid-item {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-brand);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-grid-item:nth-child(3n) .hero-grid-image {
+  object-position: 65% center;
+}
+
+.hero-grid-item:nth-child(4n) .hero-grid-image {
+  object-position: center 30%;
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: rgba(30, 43, 34, 0.88);
+  opacity: 0;
+}
+
+.hero-grid-context {
+  margin: 0 0 var(--space-2);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-grid-overlay h2 {
+  margin: 0 0 var(--space-4);
+  font-size: 1.125rem;
+}
+
+.hero-grid-visit {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-text-inverse);
+  border-radius: 4px;
+  color: var(--color-text-inverse);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-grid-item:hover .hero-grid-overlay,
+.hero-grid-item:focus-within .hero-grid-overlay {
+  opacity: 1;
+}
+
+.hero-grid-item:hover .hero-grid-image,
+.hero-grid-item:focus-within .hero-grid-image {
+  transform: scale(1.04);
+}
+
+.hero-grid-visit:hover,
+.hero-grid-visit:focus-visible {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-brand-dark);
+}
+
+@media (max-width: 767px), (hover: none) {
+  .hero {
+    min-height: min(680px, calc(100svh - 73px));
+  }
+
   .hero h1 {
-    font-size: 3.5rem;
+    padding-top: var(--space-6);
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .hero-grid-overlay {
+    padding: var(--space-3);
+    opacity: 1;
+  }
+
+  .hero-grid-overlay h2 {
+    margin-bottom: var(--space-3);
+    font-size: 1rem;
+  }
+
+  .hero-grid-context {
+    font-size: 0.6875rem;
   }
 }
 
-.hero .lead {
-  max-width: 40em;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.125rem;
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid {
+    will-change: auto;
+  }
 }
 
 .feed-grid {

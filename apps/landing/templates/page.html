@@ -41,11 +41,22 @@
 
   <main>
     <!-- 1. Hero — Discovery -->
-    <section class="section hero">
-      <p class="eyebrow">{{hero.eyebrow}}</p>
-      <h1>{{hero.title}}</h1>
-      <p class="lead">{{hero.body}}</p>
-      <a class="button button-primary" href="#feed">{{hero.cta}}</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">{{hero.title}}</h1>
+      <div class="hero-grid-viewport" tabindex="0" aria-label="{{hero.gridLabel}}">
+        <div class="hero-grid" data-hero-grid>
+          {{#each hero.items}}
+          <article class="hero-grid-item" data-hero-item data-image="{{this.image}}">
+            <img class="hero-grid-image" data-hero-image alt="{{this.alt}}" />
+            <div class="hero-grid-overlay">
+              <p class="hero-grid-context">{{this.context}}</p>
+              <h2>{{this.title}}</h2>
+              <a class="hero-grid-visit" href="{{this.href}}">{{this.visitLabel}}</a>
+            </div>
+          </article>
+          {{/each}}
+        </div>
+      </div>
     </section>
 
     <!-- 2. The Discovery Feed -->

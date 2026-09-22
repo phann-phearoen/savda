@@ -11,10 +11,27 @@
     "switchHref": "/en/"
   },
   "hero": {
-    "eyebrow": "សាវតា",
     "title": "ស្វែងរកអ្វីដែលកម្ពុជាផលិត។",
-    "body": "សាវតា ជាវេទិកាមួយដែលនិទានរឿងរ៉ាវនៅពីក្រោយផលិតផលកម្ពុជា — មនុស្ស សិប្បកម្ម និងគំនិតដែលមនុស្សភាគច្រើននៅតែមិនទាន់ស្គាល់។",
-    "cta": "ស្វែងយល់ពី សាវតា"
+    "gridLabel": "បណ្តុំផលិតផល និងអ្នកបង្កើតកម្ពុជាដែលផ្លាស់ទីជានិច្ច",
+    "items": [
+      { "image": "bean-to-bar-chocolate-72-percent.jpeg", "alt": "សូកូឡាផលិតពីគ្រាប់កាកាវនៅកម្ពុជា", "title": "កាកាវដែលមានទស្សនៈក្នុងស្រុក", "context": "អាហារ និងភេសជ្ជៈ", "visitLabel": "ទស្សនា", "href": "/stories/bean-to-bar-chocolate" },
+      { "image": "black-and-natural-woven-basket.jpeg", "alt": "កន្ត្រកត្បាញពណ៌ខ្មៅ និងធម្មជាតិ", "title": "ប្រើប្រាស់បាន ដោយដៃអ្នកត្បាញ", "context": "សិប្បកម្មផ្តៅ", "visitLabel": "ទស្សនា", "href": "/stories/woven-basket" },
+      { "image": "blue-handwoven-scarf-on-mannequin.jpeg", "alt": "ក្រមាពណ៌ខៀវត្បាញដោយដៃនៅលើម៉ាណឺកាំង", "title": "ក្រណាត់ដែលគួរឱ្យចាប់អារម្មណ៍", "context": "វាយនភណ្ឌត្បាញដៃ", "visitLabel": "ទស្សនា", "href": "/stories/blue-handwoven-scarf" },
+      { "image": "cambodian-coffee-packaging.jpeg", "alt": "កាហ្វេកម្ពុជាវេចខ្ចប់រួច", "title": "កាហ្វេដែលមានអារម្មណ៍ពីទីកន្លែង", "context": "អាហារ និងភេសជ្ជៈ", "visitLabel": "ទស្សនា", "href": "/stories/cambodian-coffee" },
+      { "image": "ceramic-tableware-store-interior.jpeg", "alt": "គ្រឿងតុធ្វើពីសេរ៉ាមិចក្នុងហាង", "title": "ភាពទាក់ទាញស្ងប់ស្ងាត់នៃសេរ៉ាមិចល្អ", "context": "ស្ទូឌីយោសេរ៉ាមិច", "visitLabel": "ទស្សនា", "href": "/stories/ceramic-tableware" },
+      { "image": "coffee-bag-on-cafe-table.jpeg", "alt": "ថង់កាហ្វេលើតុកាហ្វេ", "title": "ទម្លាប់ប្រចាំថ្ងៃដែលគិតឡើងវិញ", "context": "វប្បធម៌កាហ្វេ", "visitLabel": "ទស្សនា", "href": "/stories/coffee-on-the-table" },
+      { "image": "coffee-bag-with-peppercorns.jpeg", "alt": "ថង់កាហ្វេជាមួយគ្រាប់ម្រេច", "title": "កន្លែងដែលកាហ្វេជួបម្រេច", "context": "គ្រឿងផ្សំកម្ពុជា", "visitLabel": "ទស្សនា", "href": "/stories/coffee-and-pepper" },
+      { "image": "curio-cambodian-palm-sugar.jpeg", "alt": "វេចខ្ចប់ស្ករត្នោតកម្ពុជា", "title": "គ្រឿងផ្ទះបាយដែលមានអត្តចរិត", "context": "គ្រឿងផ្សំកម្ពុជា", "visitLabel": "ទស្សនា", "href": "/stories/palm-sugar" },
+      { "image": "gold-leaf-bracelet-earrings.jpeg", "alt": "ខ្សែដៃ និងក្រវិលស្លឹកមាស", "title": "សញ្ញាតូចមួយនៃមាស", "context": "គ្រឿងអលង្ការ", "visitLabel": "ទស្សនា", "href": "/stories/gold-leaf-jewellery" },
+      { "image": "kirum-cambodian-pepper-coffee.jpeg", "alt": "កាហ្វេម្រេចកម្ពុជារបស់ Kirum", "title": "កាហ្វេដែលមានរសជាតិខ្លាំង", "context": "អាហារ និងភេសជ្ជៈ", "visitLabel": "ទស្សនា", "href": "/stories/kirum-pepper-coffee" },
+      { "image": "round-rattan-serving-tray.jpeg", "alt": "ថាសបម្រើមូលធ្វើពីផ្តៅ", "title": "ធ្វើឱ្យតុកក់ក្តៅជាងមុន", "context": "សិប្បកម្មផ្តៅ", "visitLabel": "ទស្សនា", "href": "/stories/rattan-serving-tray" },
+      { "image": "traditional-weaving-loom.jpg", "alt": "កីតម្បាញប្រពៃណីកំពុងប្រើប្រាស់", "title": "ចង្វាក់នៅពីក្រោយក្រណាត់", "context": "ដំណើរការតម្បាញ", "visitLabel": "ទស្សនា", "href": "/stories/traditional-weaving" },
+      { "image": "tropical-spa-body-care-products.webp", "alt": "ផលិតផលថែរក្សារាងកាយបែបតំបន់ត្រូពិច", "title": "ការថែទាំតាមរូបរាងតំបន់ត្រូពិច", "context": "ថែរក្សារាងកាយ", "visitLabel": "ទស្សនា", "href": "/stories/tropical-body-care" },
+      { "image": "woman-wearing-purple-silk-outfit.jpeg", "alt": "ស្ត្រីម្នាក់ស្លៀកសម្លៀកបំពាក់សូត្រពណ៌ស្វាយ", "title": "សូត្រក្នុងសម័យបច្ចុប្បន្ន", "context": "ម៉ូដកម្ពុជា", "visitLabel": "ទស្សនា", "href": "/stories/purple-silk" },
+      { "image": "woven-market-baskets.jpeg", "alt": "កន្ត្រកត្បាញនៅផ្សារ", "title": "ទម្រង់ស្គាល់ស្រាប់ មើលឃើញថ្មី", "context": "វត្ថុប្រើប្រាស់ប្រចាំថ្ងៃ", "visitLabel": "ទស្សនា", "href": "/stories/market-baskets" },
+      { "image": "woven-rattan-crossbody-bag.jpeg", "alt": "កាបូបស្ពាយឆ្លងខ្លួនធ្វើពីផ្តៅ", "title": "សម្រាប់ដំណើរចេញទៅក្រៅ", "context": "គ្រឿងបន្ថែមផ្តៅ", "visitLabel": "ទស្សនា", "href": "/stories/rattan-crossbody" },
+      { "image": "yellow-handwoven-scarf-outdoors.jpeg", "alt": "ក្រមាត្បាញដៃពណ៌លឿងនៅខាងក្រៅ", "title": "ពណ៌ដែលនាំរឿងរ៉ាវមកជាមួយ", "context": "វាយនភណ្ឌត្បាញដៃ", "visitLabel": "ទស្សនា", "href": "/stories/yellow-handwoven-scarf" }
+    ]
   },
   "feed": {
     "title": "មុខអ្នកច្នៃប្រឌិត",
