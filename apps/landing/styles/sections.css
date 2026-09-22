@@ -36,9 +36,25 @@ html[lang="km"] .brand span {
 }
 
 .lang-switch a {
-  color: var(--color-text-inverse);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   text-decoration: none;
-  font-size: 0.875rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+  background: rgba(239, 235, 228, 0.15);
+  transform: scale(1.08);
+}
+
+.lang-switch .flag {
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 .hero {

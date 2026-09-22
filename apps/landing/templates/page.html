@@ -32,7 +32,10 @@
       <span>{{nav.logoAlt}}</span>
     </a>
     <nav class="lang-switch">
-      <a href="{{nav.switchHref}}">{{nav.switchLabel}}</a>
+      <a href="{{nav.switchHref}}" title="{{nav.switchLabel}}">
+        <span class="flag" aria-hidden="true">{{nav.switchFlag}}</span>
+        <span class="sr-only">{{nav.switchLabel}}</span>
+      </a>
     </nav>
   </header>
 
