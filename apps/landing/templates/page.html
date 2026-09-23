@@ -42,22 +42,27 @@
   <main>
     <!-- 1. Hero — Discovery -->
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">{{hero.title}}</h1>
-      <div class="hero-grid-viewport" tabindex="0" aria-label="{{hero.gridLabel}}">
-        <div class="hero-grid" data-hero-grid>
-          {{#each hero.items}}
-          <article class="hero-grid-item" data-hero-item data-image="{{this.image}}">
-            <img class="hero-grid-image" data-hero-image alt="{{this.alt}}" />
-            <div class="hero-grid-overlay">
-              <button class="hero-grid-close" type="button" aria-label="{{hero.dismissLabel}}">&times;</button>
-              <p class="hero-grid-context">{{this.context}}</p>
-              <h2>{{this.title}}</h2>
-              <a class="hero-grid-visit" href="{{this.href}}">{{this.visitLabel}}</a>
-            </div>
-          </article>
-          {{/each}}
-        </div>
+      <div class="hero-media">
+        <img src="../assets/{{hero.feature.image}}" alt="{{hero.feature.alt}}" />
       </div>
+      <div class="hero-wash" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">{{hero.eyebrow}}</p>
+        <h1 id="hero-title">{{hero.title}}</h1>
+        <p class="hero-intro">{{hero.intro}}</p>
+        <a class="button hero-cta" href="{{hero.ctaHref}}">{{hero.cta}}</a>
+      </div>
+
+      <article class="hero-feature" aria-labelledby="hero-feature-title">
+        <p class="hero-feature-label">{{hero.feature.label}}</p>
+        <p class="hero-feature-category">{{hero.feature.category}}</p>
+        <h2 id="hero-feature-title">{{hero.feature.title}}</h2>
+        <p class="hero-feature-description">{{hero.feature.description}}</p>
+        <a class="hero-feature-link" href="{{hero.feature.href}}">{{hero.feature.cta}}</a>
+      </article>
+
+      <a class="hero-scroll" href="#feed">{{hero.scrollLabel}}</a>
     </section>
 
     <!-- 2. The Discovery Feed -->

@@ -12,6 +12,21 @@
   },
   "hero": {
     "title": "Discover what Cambodia makes.",
+    "eyebrow": "Savda / Cambodia",
+    "intro": "Savda finds the products, people, and ideas shaping Cambodia now.",
+    "cta": "Explore the stories",
+    "ctaHref": "#feed",
+    "scrollLabel": "Start discovering",
+    "feature": {
+      "label": "Current discovery",
+      "image": "woman-wearing-purple-silk-outfit.jpeg",
+      "alt": "A woman wearing a purple Cambodian silk outfit",
+      "category": "Cambodian fashion",
+      "title": "Silk in the present tense",
+      "description": "A story about craft, style, and the people carrying it forward.",
+      "cta": "Read the story",
+      "href": "/stories/purple-silk"
+    },
     "gridLabel": "A moving collection of Cambodian products and makers",
     "dismissLabel": "Close story preview",
     "items": [
