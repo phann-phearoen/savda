@@ -13,6 +13,7 @@
   "hero": {
     "title": "ស្វែងរកអ្វីដែលកម្ពុជាផលិត។",
     "gridLabel": "បណ្តុំផលិតផល និងអ្នកបង្កើតកម្ពុជាដែលផ្លាស់ទីជានិច្ច",
+    "dismissLabel": "បិទការមើលរឿងជាមុន",
     "items": [
       { "image": "bean-to-bar-chocolate-72-percent.jpeg", "alt": "សូកូឡាផលិតពីគ្រាប់កាកាវនៅកម្ពុជា", "title": "កាកាវដែលមានទស្សនៈក្នុងស្រុក", "context": "អាហារ និងភេសជ្ជៈ", "visitLabel": "ទស្សនា", "href": "/stories/bean-to-bar-chocolate" },
       { "image": "black-and-natural-woven-basket.jpeg", "alt": "កន្ត្រកត្បាញពណ៌ខ្មៅ និងធម្មជាតិ", "title": "ប្រើប្រាស់បាន ដោយដៃអ្នកត្បាញ", "context": "សិប្បកម្មផ្តៅ", "visitLabel": "ទស្សនា", "href": "/stories/woven-basket" },

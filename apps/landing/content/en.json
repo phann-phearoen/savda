@@ -13,6 +13,7 @@
   "hero": {
     "title": "Discover what Cambodia makes.",
     "gridLabel": "A moving collection of Cambodian products and makers",
+    "dismissLabel": "Close story preview",
     "items": [
       { "image": "bean-to-bar-chocolate-72-percent.jpeg", "alt": "A bar of Cambodian bean-to-bar chocolate", "title": "Cacao with a local point of view", "context": "Food and drink", "visitLabel": "Visit", "href": "/stories/bean-to-bar-chocolate" },
       { "image": "black-and-natural-woven-basket.jpeg", "alt": "A black and natural woven basket", "title": "Utility, woven by hand", "context": "Rattan craft", "visitLabel": "Visit", "href": "/stories/woven-basket" },

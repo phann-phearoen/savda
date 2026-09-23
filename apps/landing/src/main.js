@@ -73,14 +73,19 @@ function initializeHeroGrid() {
     hasDragged: false,
     isPaused: false,
     suppressNextClick: false,
+    activeItem: null,
+    activeScaleX: 1,
+    activeScaleY: 1,
+    reframeFrame: 0,
   };
 
   const patternItems = Math.ceil((state.columns * state.rows) / sourceItems.length) * sourceItems.length;
   const tileInstances = [];
+  const tileInstanceByElement = new Map();
   const fragment = document.createDocumentFragment();
 
-  for (let patternY = 0; patternY < 3; patternY += 1) {
-    for (let patternX = 0; patternX < 3; patternX += 1) {
+  for (let patternY = -1; patternY <= 1; patternY += 1) {
+    for (let patternX = -1; patternX <= 1; patternX += 1) {
       for (let index = 0; index < patternItems; index += 1) {
         const item = sourceItems[index % sourceItems.length].cloneNode(true);
         const image = item.querySelector("[data-hero-image]");
@@ -88,8 +93,11 @@ function initializeHeroGrid() {
         if (image && imageUrl) {
           image.src = imageUrl;
           image.loading = "lazy";
+          image.alt = "";
         }
-        tileInstances.push({ item, patternX, patternY, index });
+        const tileInstance = { item, patternX, patternY, index, x: 0, y: 0 };
+        tileInstances.push(tileInstance);
+        tileInstanceByElement.set(item, tileInstance);
         fragment.append(item);
       }
     }
@@ -104,10 +112,129 @@ function initializeHeroGrid() {
   function wrapCamera() {
     if (!state.patternWidth || !state.patternHeight) return;
 
-    while (state.cameraX >= 0) state.cameraX -= state.patternWidth;
-    while (state.cameraX <= -state.patternWidth * 2) state.cameraX += state.patternWidth;
-    while (state.cameraY >= 0) state.cameraY -= state.patternHeight;
-    while (state.cameraY <= -state.patternHeight * 2) state.cameraY += state.patternHeight;
+    while (state.cameraX >= state.patternWidth) state.cameraX -= state.patternWidth;
+    while (state.cameraX <= -state.patternWidth) state.cameraX += state.patternWidth;
+    while (state.cameraY >= state.patternHeight) state.cameraY -= state.patternHeight;
+    while (state.cameraY <= -state.patternHeight) state.cameraY += state.patternHeight;
+  }
+
+  function positionTile(tileInstance) {
+    const { item, x, y } = tileInstance;
+    const isActive = state.activeItem === item;
+    const scaleX = isActive ? state.activeScaleX : 1;
+    const scaleY = isActive ? state.activeScaleY : 1;
+    const width = state.tileWidth * scaleX;
+    const height = state.tileHeight * scaleY;
+    const direction = item.dataset.spotlightDirection;
+    const expandedX = direction === "left" ? x - (width - state.tileWidth) : x;
+    const expandedY = y - (height - state.tileHeight) / 2;
+
+    item.style.width = `${width}px`;
+    item.style.height = `${height}px`;
+    item.style.transform = `translate3d(${expandedX}px, ${expandedY}px, 0)`;
+  }
+
+  function setSpotlightAccessibility(item, isActive) {
+    const overlay = item.querySelector(".hero-grid-overlay");
+    const controls = item.querySelectorAll(".hero-grid-close, .hero-grid-visit");
+    if (!overlay) return;
+
+    overlay.setAttribute("aria-hidden", String(!isActive));
+    controls.forEach((control) => {
+      control.tabIndex = isActive ? 0 : -1;
+    });
+  }
+
+  function deactivateSpotlight(resumeMotion = true) {
+    if (!state.activeItem) return;
+
+    cancelAnimationFrame(state.reframeFrame);
+    state.reframeFrame = 0;
+    const activeItem = state.activeItem;
+    activeItem.classList.remove("is-spotlight");
+    delete activeItem.dataset.spotlightDirection;
+    state.activeItem = null;
+    state.activeScaleX = 1;
+    state.activeScaleY = 1;
+    positionTile(tileInstanceByElement.get(activeItem));
+    setSpotlightAccessibility(activeItem, false);
+    grid.classList.remove("has-spotlight");
+    if (resumeMotion) setPaused(viewport.matches(":focus-within"));
+  }
+
+  function animateCameraTo(offsetX, offsetY) {
+    if (!offsetX && !offsetY) return;
+
+    cancelAnimationFrame(state.reframeFrame);
+    const startX = state.cameraX;
+    const startY = state.cameraY;
+    const duration = motionQuery.matches ? 0 : 240;
+    const startedAt = performance.now();
+
+    function reframe(frameTime) {
+      const progress = duration ? Math.min((frameTime - startedAt) / duration, 1) : 1;
+      const eased = 1 - (1 - progress) ** 3;
+      state.cameraX = startX + offsetX * eased;
+      state.cameraY = startY + offsetY * eased;
+      wrapCamera();
+      render();
+      if (progress < 1) {
+        state.reframeFrame = requestAnimationFrame(reframe);
+      } else {
+        state.reframeFrame = 0;
+      }
+    }
+
+    state.reframeFrame = requestAnimationFrame(reframe);
+  }
+
+  function reframeSpotlight(item) {
+    const viewportRect = viewport.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const inset = viewport.clientWidth < 640 ? 16 : 24;
+    const expandedLeft = itemRect.left;
+    const expandedTop = itemRect.top;
+    const expandedRight = itemRect.right;
+    const expandedBottom = itemRect.bottom;
+    const safeLeft = viewportRect.left + inset;
+    const safeTop = viewportRect.top + inset;
+    const safeRight = viewportRect.right - inset;
+    const safeBottom = viewportRect.bottom - inset;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    if (expandedLeft < safeLeft) offsetX = safeLeft - expandedLeft;
+    else if (expandedRight > safeRight) offsetX = safeRight - expandedRight;
+    if (expandedTop < safeTop) offsetY = safeTop - expandedTop;
+    else if (expandedBottom > safeBottom) offsetY = safeBottom - expandedBottom;
+
+    animateCameraTo(offsetX, offsetY);
+  }
+
+  function activateSpotlight(item) {
+    if (state.activeItem === item) return;
+
+    deactivateSpotlight(false);
+    const itemRect = item.getBoundingClientRect();
+    const viewportRect = viewport.getBoundingClientRect();
+    const inset = viewport.clientWidth < 640 ? 16 : 24;
+    const maximumWidth = viewportRect.width - inset * 2;
+    const isCompact = viewport.clientWidth < 640;
+    const scaleX = Math.min(isCompact ? 2.75 : 1.92, maximumWidth / itemRect.width);
+    const spaceLeft = itemRect.left - viewportRect.left - inset;
+    const spaceRight = viewportRect.right - itemRect.right - inset;
+    const direction = spaceRight >= spaceLeft ? "right" : "left";
+
+    state.activeItem = item;
+    state.activeScaleX = Math.max(1, scaleX);
+    state.activeScaleY = isCompact ? 1.08 : 1.14;
+    item.dataset.spotlightDirection = direction;
+    item.classList.add("is-spotlight");
+    grid.classList.add("has-spotlight");
+    positionTile(tileInstanceByElement.get(item));
+    setSpotlightAccessibility(item, true);
+    setPaused(true);
+    reframeSpotlight(item);
   }
 
   function layoutGrid() {
@@ -124,19 +251,23 @@ function initializeHeroGrid() {
       viewportHeight + state.tileHeight,
     );
 
-    tileInstances.forEach(({ item, patternX, patternY, index }) => {
+    tileInstances.forEach((tileInstance) => {
+      const { item, patternX, patternY, index } = tileInstance;
       const column = index % state.columns;
       const row = Math.floor(index / state.columns);
-      const x = (patternX + 1) * state.patternWidth + column * (state.tileWidth + state.gap);
-      const y = (patternY + 1) * state.patternHeight + row * (state.tileHeight + state.gap);
-      item.style.width = `${state.tileWidth}px`;
-      item.style.height = `${state.tileHeight}px`;
-      item.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      const x = patternX * state.patternWidth + column * (state.tileWidth + state.gap);
+      const y = patternY * state.patternHeight + row * (state.tileHeight + state.gap);
+      tileInstance.x = x;
+      tileInstance.y = y;
+      positionTile(tileInstance);
     });
 
-    state.cameraX = -state.patternWidth;
-    state.cameraY = -state.patternHeight;
+    state.cameraX = 0;
+    state.cameraY = 0;
     render();
+    if (state.activeItem) {
+      reframeSpotlight(state.activeItem);
+    }
   }
 
   function edgeVelocity(position, length) {
@@ -220,6 +351,7 @@ function initializeHeroGrid() {
 
   viewport.addEventListener("pointerdown", (event) => {
     if (event.button !== 0) return;
+    if (event.target.closest(".hero-grid-close, .hero-grid-visit")) return;
     state.pointerId = event.pointerId;
     state.dragStartX = event.clientX;
     state.dragStartY = event.clientY;
@@ -238,6 +370,13 @@ function initializeHeroGrid() {
     state.isDragging = false;
     state.pointerId = null;
     viewport.releasePointerCapture(event.pointerId);
+    if (event.pointerType !== "mouse" && !state.hasDragged) {
+      const item = document.elementFromPoint(event.clientX, event.clientY)?.closest("[data-hero-item]");
+      if (item) {
+        if (state.activeItem === item) deactivateSpotlight();
+        else activateSpotlight(item);
+      }
+    }
     state.pointer = { x: event.clientX, y: event.clientY };
     updateVelocity();
   });
@@ -262,6 +401,13 @@ function initializeHeroGrid() {
   });
 
   viewport.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && state.activeItem) {
+      deactivateSpotlight();
+      viewport.focus();
+      event.preventDefault();
+      return;
+    }
+
     const movement = 96;
     if (event.key === "ArrowLeft") state.cameraX += movement;
     else if (event.key === "ArrowRight") state.cameraX -= movement;
@@ -284,6 +430,27 @@ function initializeHeroGrid() {
 
   motionQuery.addEventListener("change", updateVelocity);
   window.addEventListener("resize", layoutGrid);
+  tileInstances.forEach(({ item }) => {
+    setSpotlightAccessibility(item, false);
+    item.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") activateSpotlight(item);
+    });
+    item.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse" && state.activeItem === item && !item.contains(event.relatedTarget)) {
+        deactivateSpotlight();
+      }
+    });
+  });
+  grid.addEventListener("focusin", (event) => {
+    const item = event.target.closest("[data-hero-item]");
+    if (item) activateSpotlight(item);
+  });
+  grid.addEventListener("click", (event) => {
+    if (!event.target.closest(".hero-grid-close")) return;
+    event.preventDefault();
+    deactivateSpotlight();
+    viewport.focus();
+  });
   layoutGrid();
 }
 

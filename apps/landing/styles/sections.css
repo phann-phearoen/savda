@@ -127,10 +127,21 @@ html[lang="km"] .brand span {
 
 .hero-grid-item {
   position: absolute;
+  z-index: 0;
   margin: 0;
   overflow: hidden;
   background: var(--color-brand);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), width 0.26s cubic-bezier(0.22, 1, 0.36, 1), height 0.26s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease, box-shadow 0.26s ease;
+}
+
+.hero-grid.has-spotlight .hero-grid-item:not(.is-spotlight) {
+  opacity: 0.58;
+}
+
+.hero-grid-item.is-spotlight {
+  z-index: 3;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.42);
 }
 
 .hero-grid-image {
@@ -155,8 +166,70 @@ html[lang="km"] .brand span {
   justify-content: flex-end;
   align-items: flex-start;
   padding: var(--space-4);
-  background: rgba(30, 43, 34, 0.88);
+  background: linear-gradient(180deg, rgba(30, 43, 34, 0) 24%, rgba(30, 43, 34, 0.3) 50%, rgba(30, 43, 34, 0.92) 100%);
   opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.hero-grid-item.is-spotlight .hero-grid-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-grid-overlay > :not(.hero-grid-close) {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.2s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-grid-item.is-spotlight .hero-grid-overlay > :not(.hero-grid-close) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-grid-item.is-spotlight .hero-grid-context {
+  transition-delay: 0.08s;
+}
+
+.hero-grid-item.is-spotlight .hero-grid-overlay h2 {
+  transition-delay: 0.12s;
+}
+
+.hero-grid-item.is-spotlight .hero-grid-visit {
+  transition-delay: 0.16s;
+}
+
+.hero-grid-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(239, 235, 228, 0.65);
+  border-radius: 50%;
+  background: rgba(30, 43, 34, 0.36);
+  color: var(--color-text-inverse);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, background 0.18s ease;
+}
+
+.hero-grid-item.is-spotlight .hero-grid-close {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-grid-close:hover,
+.hero-grid-close:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-brand-dark);
 }
 
 .hero-grid-context {
@@ -183,16 +256,6 @@ html[lang="km"] .brand span {
   text-decoration: none;
 }
 
-.hero-grid-item:hover .hero-grid-overlay,
-.hero-grid-item:focus-within .hero-grid-overlay {
-  opacity: 1;
-}
-
-.hero-grid-item:hover .hero-grid-image,
-.hero-grid-item:focus-within .hero-grid-image {
-  transform: scale(1.04);
-}
-
 .hero-grid-visit:hover,
 .hero-grid-visit:focus-visible {
   background: var(--color-accent);
@@ -212,7 +275,6 @@ html[lang="km"] .brand span {
 
   .hero-grid-overlay {
     padding: var(--space-3);
-    opacity: 1;
   }
 
   .hero-grid-overlay h2 {
@@ -233,6 +295,13 @@ html[lang="km"] .brand span {
 
   .hero-grid {
     will-change: auto;
+  }
+
+  .hero-grid-item,
+  .hero-grid-overlay,
+  .hero-grid-overlay > :not(.hero-grid-close),
+  .hero-grid-close {
+    transition: none;
   }
 }
 
