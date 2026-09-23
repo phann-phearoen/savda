@@ -76,6 +76,27 @@ html[lang="km"] .brand span {
   font-size: clamp(2.5rem, 5vw, 5.5rem);
   pointer-events: none;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+  animation: hero-title-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes hero-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero:hover h1 {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
 }
 
 .hero-grid-viewport {
@@ -205,6 +226,11 @@ html[lang="km"] .brand span {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero h1 {
+    animation: none;
+    transition: none;
+  }
+
   .hero-grid {
     will-change: auto;
   }
