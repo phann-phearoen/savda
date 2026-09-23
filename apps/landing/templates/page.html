@@ -65,13 +65,23 @@
 
     <!-- 2. The Discovery Feed -->
     <section class="section feed" id="feed">
-      <h2>{{feed.title}}</h2>
-      <p class="section-intro">{{feed.intro}}</p>
+      <div class="feed-heading">
+        <h2>{{feed.title}}</h2>
+        <p class="section-intro">{{feed.intro}}</p>
+      </div>
       <div class="feed-grid">
-        {{#each feed.items}}
+        {{#each hero.items}}
         <figure class="feed-item">
-          <div class="feed-image-placeholder" role="img" aria-label="{{this.alt}}"></div>
-          <figcaption>{{this.caption}}</figcaption>
+          <a class="feed-link" href="{{this.href}}">
+            <span class="feed-media">
+              <img src="../assets/{{this.image}}" alt="{{this.alt}}" loading="lazy" />
+            </span>
+            <figcaption>
+              <p class="feed-context">{{this.context}}</p>
+              <h3>{{this.title}}</h3>
+              <span class="feed-visit">{{this.visitLabel}}</span>
+            </figcaption>
+          </a>
         </figure>
         {{/each}}
       </div>
