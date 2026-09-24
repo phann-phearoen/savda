@@ -60,14 +60,34 @@
       { "caption": "A leather workshop based in Phnom Penh", "alt": "Placeholder photo of leather goods" }
     ]
   },
-  "stories": {
-    "title": "Good products deserve to be discovered.",
-    "subtitle": "Good creators deserve to be known.",
-    "body": "Savda isn't just cataloguing products. It tells the stories of the people who make them — the craftsmanship, the process, and the ideas behind every piece."
-  },
-  "madeInCambodia": {
-    "title": "Made in Cambodia, worth knowing.",
-    "body": "There are Cambodian products you haven't heard of yet — and Cambodian-made doesn't have to mean cheap alternative. It can mean design, craftsmanship, innovation, quality, culture, and originality."
+  "about": {
+    "title": "Three people. One shared belief.",
+    "intro": "What Cambodia makes is already worth knowing.",
+    "body": "Savda brings together enterprise, craft, and technology to make Cambodian work more visible at home and beyond.",
+    "closing": "Together, Paul, Linda, and Phearoen are building a platform to show Cambodia and the world what Cambodians are already making, and what is still possible.",
+    "people": [
+      {
+        "name": "Paul S. Gill",
+        "role": "Social enterprise entrepreneur",
+        "body": "Paul has worked with enterprises that create sustainable microbusinesses with local Cambodians.",
+        "image": "../assets/team/paul.jpg",
+        "alt": "Portrait of Paul S. Gill"
+      },
+      {
+        "name": "Meas Linda",
+        "role": "Workshop owner and maker",
+        "body": "Linda runs a local weaving and soap-making workshop. With her homestay at its centre, she helps rural women make a living through the business.",
+        "image": "../assets/team/linda.jpg",
+        "alt": "Portrait of Meas Linda"
+      },
+      {
+        "name": "Phann Phearoen",
+        "role": "Software engineer",
+        "body": "Phearoen works with international companies and wants to use technology to create value at home in Cambodia.",
+        "image": "../assets/team/phearoen.jpg",
+        "alt": "Portrait of Phann Phearoen"
+      }
+    ]
   },
   "shop": {
     "title": "Found something you like?",

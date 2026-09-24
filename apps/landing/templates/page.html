@@ -87,17 +87,28 @@
       </div>
     </section>
 
-    <!-- 3. The Stories Behind the Products -->
-    <section class="section stories">
-      <h2>{{stories.title}}</h2>
-      <p class="section-subtitle">{{stories.subtitle}}</p>
-      <p>{{stories.body}}</p>
-    </section>
+    <!-- 3. About Us -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about-heading">
+        <h2 id="about-title">{{about.title}}</h2>
+        <p class="about-intro">{{about.intro}}</p>
+        <p class="about-body">{{about.body}}</p>
+      </div>
 
-    <!-- 4. Made in Cambodia, Worth Knowing -->
-    <section class="section made-in-cambodia">
-      <h2>{{madeInCambodia.title}}</h2>
-      <p>{{madeInCambodia.body}}</p>
+      <div class="founder-grid">
+        {{#each about.people}}
+        <article class="founder-profile">
+          <img class="founder-portrait" src="{{this.image}}" alt="{{this.alt}}" loading="lazy" />
+          <div class="founder-copy">
+            <p class="founder-role">{{this.role}}</p>
+            <h3>{{this.name}}</h3>
+            <p>{{this.body}}</p>
+          </div>
+        </article>
+        {{/each}}
+      </div>
+
+      <p class="about-closing">{{about.closing}}</p>
     </section>
 
     <!-- 5. Discover → Shop -->

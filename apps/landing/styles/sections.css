@@ -467,6 +467,91 @@ html[lang="km"] .hero h1 {
   text-align: center;
 }
 
+.about {
+  max-width: var(--container-wide);
+}
+
+.about-heading {
+  max-width: 49rem;
+}
+
+.about-heading h2 {
+  max-width: 11ch;
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
+  letter-spacing: -0.05em;
+}
+
+.about-intro {
+  max-width: 27rem;
+  margin-bottom: var(--space-4);
+  color: var(--color-accent-secondary);
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  font-weight: 600;
+}
+
+.about-body {
+  max-width: 42rem;
+  margin-bottom: 0;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.founder-grid {
+  display: grid;
+  gap: var(--space-12);
+  margin-top: var(--space-12);
+}
+
+.founder-profile {
+  margin: 0;
+}
+
+.founder-portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--color-border);
+}
+
+.founder-copy {
+  max-width: 28rem;
+  padding-top: var(--space-4);
+}
+
+.founder-role {
+  margin: 0 0 var(--space-1);
+  color: var(--color-accent-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.founder-copy h3 {
+  margin-bottom: var(--space-2);
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+}
+
+.founder-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-closing {
+  max-width: 49rem;
+  margin: var(--space-16) 0 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .founder-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+
+  .founder-profile:nth-child(2) {
+    margin-top: var(--space-16);
+  }
+}
+
 .section-subtitle {
   font-size: 1.125rem;
   color: var(--color-accent-secondary);
