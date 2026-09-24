@@ -124,10 +124,19 @@
     </section>
 
     <!-- 5. For Creators -->
-    <section class="section creators">
-      <h2>{{creators.title}}</h2>
-      <p>{{creators.body}}</p>
-      <a class="button button-secondary" href="mailto:hello@savda.com">{{creators.cta}}</a>
+    <section class="section creators" id="creators" aria-labelledby="creators-title">
+      <div class="creators-inner">
+        <figure class="creators-visual">
+          <img src="../assets/{{creators.image}}" alt="{{creators.alt}}" loading="lazy" />
+        </figure>
+
+        <div class="creators-content">
+          <h2 id="creators-title">{{creators.title}}</h2>
+          <p class="creators-intro">{{creators.intro}}</p>
+          <p class="creators-body">{{creators.body}}</p>
+          <a class="button creators-cta" href="{{creators.ctaHref}}">{{creators.cta}}</a>
+        </div>
+      </div>
     </section>
 
     <!-- 6. Follow Savda -->

@@ -91,9 +91,13 @@
     "ctaHref": "/shop/"
   },
   "creators": {
-    "title": "You make it. We tell the story.",
-    "body": "Savda helps Cambodian creators get discovered by new audiences, and gives interested people a way to purchase their products — without creators needing to become experts in content marketing.",
-    "cta": "Partner with Savda"
+    "title": "Your work could be the next story worth knowing.",
+    "intro": "Your work is more than a product.",
+    "body": "Savda helps people see the care, process, and place behind what you make. Introduce your work, and we can begin the conversation.",
+    "image": "traditional-weaving-loom.jpg",
+    "alt": "A traditional weaving loom in use",
+    "cta": "Introduce your work",
+    "ctaHref": "mailto:hello@savda.com?subject=Introduce%20my%20work"
   },
   "follow": {
     "title": "Keep discovering.",
