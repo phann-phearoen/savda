@@ -459,8 +459,6 @@ html[lang="km"] .hero h1 {
   }
 }
 
-.stories,
-.made-in-cambodia,
 .shop-cta,
 .creators,
 .follow {
@@ -468,93 +466,123 @@ html[lang="km"] .hero h1 {
 }
 
 .about {
-  max-width: var(--container-wide);
+  max-width: none;
+  padding: var(--space-24) var(--gutter);
+  background: var(--color-brand-dark);
+  color: var(--color-text-inverse);
 }
 
-.about-heading {
-  max-width: 49rem;
+.about-inner,
+.about-practices,
+.about-closing {
+  width: min(100%, var(--container-wide));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about-heading h2 {
+.about-inner {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.about-content {
+  align-self: end;
+}
+
+.about h2 {
   max-width: 11ch;
-  font-size: clamp(2.25rem, 4vw, 4.5rem);
-  letter-spacing: -0.05em;
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  letter-spacing: -0.06em;
 }
 
 .about-intro {
-  max-width: 27rem;
+  max-width: 29rem;
   margin-bottom: var(--space-4);
-  color: var(--color-accent-secondary);
-  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  color: var(--color-accent);
+  font-size: clamp(1.125rem, 1.7vw, 1.5rem);
   font-weight: 600;
 }
 
 .about-body {
-  max-width: 42rem;
+  max-width: 35rem;
   margin-bottom: 0;
+  color: rgba(239, 235, 228, 0.84);
   font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 
-.founder-grid {
-  display: grid;
-  gap: var(--space-12);
-  margin-top: var(--space-12);
-}
-
-.founder-profile {
+.about-visual {
   margin: 0;
 }
 
-.founder-portrait {
+.about-visual img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-  background: var(--color-border);
 }
 
-.founder-copy {
-  max-width: 28rem;
-  padding-top: var(--space-4);
-}
-
-.founder-role {
-  margin: 0 0 var(--space-1);
-  color: var(--color-accent-secondary);
+.about-visual figcaption {
+  margin-top: var(--space-2);
+  color: rgba(239, 235, 228, 0.68);
   font-size: 0.875rem;
-  font-weight: 600;
 }
 
-.founder-copy h3 {
+.about-practices {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+  border-top: 2px solid var(--color-accent);
+}
+
+.about-practice h3 {
   margin-bottom: var(--space-2);
-  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  color: var(--color-accent);
+  font-size: 1rem;
 }
 
-.founder-copy p:last-child {
+.about-practice p {
+  max-width: 19rem;
   margin-bottom: 0;
+  color: rgba(239, 235, 228, 0.84);
 }
 
 .about-closing {
-  max-width: 49rem;
-  margin: var(--space-16) 0 0;
+  max-width: 47rem;
+  margin-top: var(--space-16);
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   font-weight: 600;
   line-height: 1.35;
 }
 
 @media (min-width: 768px) {
-  .founder-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-6);
+  .about-inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: end;
+    gap: var(--space-12);
   }
 
-  .founder-profile:nth-child(2) {
-    margin-top: var(--space-16);
+  .about-practices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .about-practice {
+    min-height: 7rem;
+    padding: 0 var(--space-6);
+  }
+
+  .about-practice:first-child {
+    padding-left: 0;
+  }
+
+  .about-practice + .about-practice {
+    border-left: 1px solid rgba(239, 235, 228, 0.28);
   }
 }
 
-.section-subtitle {
-  font-size: 1.125rem;
-  color: var(--color-accent-secondary);
+html[lang="km"] .about h2 {
+  letter-spacing: 0;
+  line-height: 1.25;
 }
 
 .shop-cta {

@@ -89,21 +89,24 @@
 
     <!-- 3. About Us -->
     <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="about-heading">
-        <h2 id="about-title">{{about.title}}</h2>
-        <p class="about-intro">{{about.intro}}</p>
-        <p class="about-body">{{about.body}}</p>
+      <div class="about-inner">
+        <div class="about-content">
+          <h2 id="about-title">{{about.title}}</h2>
+          <p class="about-intro">{{about.intro}}</p>
+          <p class="about-body">{{about.body}}</p>
+        </div>
+
+        <figure class="about-visual">
+          <img src="{{about.image}}" alt="{{about.alt}}" loading="lazy" />
+          <figcaption>{{about.people}}</figcaption>
+        </figure>
       </div>
 
-      <div class="founder-grid">
-        {{#each about.people}}
-        <article class="founder-profile">
-          <img class="founder-portrait" src="{{this.image}}" alt="{{this.alt}}" loading="lazy" />
-          <div class="founder-copy">
-            <p class="founder-role">{{this.role}}</p>
-            <h3>{{this.name}}</h3>
-            <p>{{this.body}}</p>
-          </div>
+      <div class="about-practices">
+        {{#each about.practices}}
+        <article class="about-practice">
+          <h3>{{this.label}}</h3>
+          <p>{{this.body}}</p>
         </article>
         {{/each}}
       </div>
@@ -111,7 +114,7 @@
       <p class="about-closing">{{about.closing}}</p>
     </section>
 
-    <!-- 5. Discover → Shop -->
+    <!-- 4. Discover → Shop -->
     <section class="section shop-cta">
       <h2>{{shop.title}}</h2>
       <p>{{shop.body}}</p>
@@ -120,14 +123,14 @@
       </a>
     </section>
 
-    <!-- 6. For Creators -->
+    <!-- 5. For Creators -->
     <section class="section creators">
       <h2>{{creators.title}}</h2>
       <p>{{creators.body}}</p>
       <a class="button button-secondary" href="mailto:hello@savda.com">{{creators.cta}}</a>
     </section>
 
-    <!-- 7. Follow Savda -->
+    <!-- 6. Follow Savda -->
     <section class="section follow">
       <h2>{{follow.title}}</h2>
       <p>{{follow.body}}</p>
