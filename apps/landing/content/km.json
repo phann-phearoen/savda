@@ -99,17 +99,16 @@
     "cta": "ណែនាំស្នាដៃរបស់អ្នក",
     "ctaHref": "mailto:hello@savda.com?subject=ណែនាំ%20ស្នាដៃ"
   },
-  "follow": {
-    "title": "បន្តស្វែងរក។",
-    "body": "តាមដាន សាវតា សម្រាប់ផលិតផល អ្នកបង្កើត និងរឿងរ៉ាវកម្ពុជាដែលសមនឹងស្គាល់។",
+  "footer": {
+    "tagline": "ផលិតផល អ្នកបង្កើត និងរឿងរ៉ាវកម្ពុជាដែលសមនឹងស្គាល់។",
+    "socialLabel": "តាមដាន សាវតា",
+    "languageLabel": "ភាសា",
     "social": [
       { "label": "Facebook", "href": "#" },
       { "label": "Instagram", "href": "#" },
       { "label": "TikTok", "href": "#" },
       { "label": "YouTube", "href": "#" }
-    ]
-  },
-  "footer": {
+    ],
     "copyright": "© ២០២៦ សាវតា"
   }
 }

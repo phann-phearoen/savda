@@ -99,17 +99,16 @@
     "cta": "Introduce your work",
     "ctaHref": "mailto:hello@savda.com?subject=Introduce%20my%20work"
   },
-  "follow": {
-    "title": "Keep discovering.",
-    "body": "Follow Savda for Cambodian products, creators, and stories worth knowing.",
+  "footer": {
+    "tagline": "Cambodian products, creators, and stories worth knowing.",
+    "socialLabel": "Follow Savda",
+    "languageLabel": "Language",
     "social": [
       { "label": "Facebook", "href": "#" },
       { "label": "Instagram", "href": "#" },
       { "label": "TikTok", "href": "#" },
       { "label": "YouTube", "href": "#" }
-    ]
-  },
-  "footer": {
+    ],
     "copyright": "© 2026 Savda"
   }
 }

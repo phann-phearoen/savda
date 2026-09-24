@@ -139,20 +139,39 @@
       </div>
     </section>
 
-    <!-- 6. Follow Savda -->
-    <section class="section follow">
-      <h2>{{follow.title}}</h2>
-      <p>{{follow.body}}</p>
-      <ul class="social-links">
-        {{#each follow.social}}
-        <li><a href="{{this.href}}">{{this.label}}</a></li>
-        {{/each}}
-      </ul>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <p>{{footer.copyright}}</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-brand-link" href="./">
+          <img src="/logo-inverted.svg" alt="{{nav.logoAlt}}" width="36" height="43" />
+          <span>{{nav.logoAlt}}</span>
+        </a>
+        <p>{{footer.tagline}}</p>
+      </div>
+
+      <nav class="footer-social" aria-label="{{footer.socialLabel}}">
+        <p class="footer-label">{{footer.socialLabel}}</p>
+        <ul>
+          {{#each footer.social}}
+          <li><a href="{{this.href}}">{{this.label}}</a></li>
+          {{/each}}
+        </ul>
+      </nav>
+
+      <div class="footer-language">
+        <p class="footer-label">{{footer.languageLabel}}</p>
+        <a href="{{nav.switchHref}}" title="{{nav.switchLabel}}">
+          <span class="flag" aria-hidden="true">{{nav.switchFlag}}</span>
+          <span>{{nav.switchLabel}}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-meta">
+      <p>{{footer.copyright}}</p>
+    </div>
   </footer>
 
   <script type="module" src="/src/main.js"></script>
